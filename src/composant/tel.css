@@ -1,0 +1,194 @@
+/* Conteneur principal avec effet de profondeur */
+.testimonials-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  background: radial-gradient(circle at top right, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de fond animé */
+.testimonials-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%233498db' fill-opacity='0.05'/%3E%3C/svg%3E");
+  animation: backgroundFloat 20s linear infinite;
+  pointer-events: none;
+}
+
+/* En-tête avec animation de texte */
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  transform-style: preserve-3d;
+}
+
+.testimonials-header h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(300deg, #2c3e50, #3498db, #2ecc71);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 8s ease infinite;
+  transform: translateZ(50px);
+}
+
+/* Carrousel avec effet 3D */
+.testimonials-carousel {
+  transform-style: preserve-3d;
+  position: relative;
+  height: 400px;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover {
+  transform: translateZ(30px) rotateX(5deg);
+}
+
+/* Image et contenu avec effets */
+.testimonial-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.testimonial-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3498db;
+  transform: translateZ(40px);
+  transition: all 0.4s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.testimonial-text {
+  flex: 1;
+  transform: translateZ(20px);
+}
+
+/* Icône de citation avec animation */
+.quote-icon {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 2rem;
+  color: #3498db;
+  background: white;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+  animation: rotateQuote 6s linear infinite;
+}
+
+/* Navigation par points avec effet hover */
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #3498db;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #3498db;
+  transform: scale(1.3);
+}
+
+/* Section CTA avec effet de profondeur */
+.testimonials-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(44, 62, 80, 0.1));
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background: linear-gradient(45deg, #3498db, #2c3e50);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateZ(20px);
+}
+
+.cta-button:hover {
+  transform: translateZ(30px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Étoiles jaunes */
+.star-icon {
+  color: #FFD700;
+  margin-right: 5px;
+}
+
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateZ(40px) translateY(0px); }
+  50% { transform: translateZ(40px) translateY(-10px); }
+}
+
+@keyframes rotateQuote {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes backgroundFloat {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Effets de transition */
+.testimonial-card {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+  .testimonial-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .testimonials-header h1 {
+    font-size: 2.5rem;
+  }
+}

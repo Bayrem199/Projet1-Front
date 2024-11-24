@@ -1,0 +1,222 @@
+/* Style ultra-moderne et professionnel pour le conteneur principal */
+.cart-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out, rotateIn 1s ease-in-out;
+  perspective: 1000px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+/* En-tête du panier avec effet 3D */
+.cart-container h2 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des articles avec animation 3D */
+.cart-items {
+  display: grid;
+  gap: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.cart-item:hover {
+  transform: translateY(-5px) rotateX(10deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image de l'article avec effet de zoom */
+.item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-right: 25px;
+  transition: transform 0.3s ease;
+}
+
+.item-image:hover {
+  transform: scale(1.1) rotateZ(5deg);
+}
+
+/* Détails de l'article */
+.item-details {
+  flex: 1;
+}
+
+.item-details h3 {
+  font-size: 1.3em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.item-details p {
+  color: #61dafb;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* Contrôles de quantité avec animation */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.quantity-controls button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #61dafb;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quantity-controls button:hover {
+  background: #3498db;
+  transform: scale(1.2) rotate(360deg);
+}
+
+.quantity-controls span {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Bouton de suppression avec effet de rotation */
+.remove-button {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.remove-button:hover {
+  color: #c0392b;
+  transform: scale(1.2) rotate(360deg);
+}
+
+/* Résumé du panier avec effet de profondeur */
+.cart-summary {
+  margin-top: 40px;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: right;
+  transform: translateZ(10px);
+}
+
+.cart-summary h3 {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Bouton de paiement avec animation de survol */
+.checkout-button {
+  background: linear-gradient(45deg, #61dafb, #3498db);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(97, 218, 251, 0.3);
+}
+
+.checkout-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(97, 218, 251, 0.5);
+  background: linear-gradient(45deg, #3498db, #61dafb);
+}
+
+/* Message panier vide avec animation */
+.cart-container p {
+  text-align: center;
+  font-size: 1.3em;
+  color: #7f8c8d;
+  padding: 40px;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cart-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .item-image {
+    margin: 0 0 15px 0;
+  }
+  
+  .quantity-controls {
+    justify-content: center;
+  }
+}

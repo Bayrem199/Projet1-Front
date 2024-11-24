@@ -1,0 +1,262 @@
+/* Variables et reset */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --text-color: #2c3e50;
+  --background-light: #f8f9fa;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+/* Container principal */
+.offres-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
+}
+
+/* En-tête */
+.offres-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.offres-header h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.offres-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--secondary-color);
+  border-radius: 2px;
+}
+
+.offres-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Grille des offres */
+.offres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Carte d'offre */
+.offre-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  cursor: pointer;
+  position: relative;
+}
+
+.offre-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.offre-card.selected {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+/* En-tête de la carte */
+.offre-header {
+  padding: 1.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.offre-header h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Tags */
+.offre-tags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(5px);
+}
+
+/* Détails de l'offre */
+.offre-details {
+  padding: 1.5rem;
+}
+
+.offre-details p {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Section compétences */
+.competences {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--background-light);
+  border-radius: 10px;
+}
+
+.competences h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.competences ul {
+  list-style: none;
+  padding: 0;
+}
+
+.competences li {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.competences li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+}
+
+/* Informations complémentaires */
+.infos-complementaires {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.infos-complementaires p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Bouton postuler */
+.postuler-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  position: relative;
+  overflow: hidden;
+}
+
+.postuler-btn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+.postuler-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.postuler-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Section contact */
+.contact-section {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.contact-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  border: 2px solid var(--secondary-color);
+  border-radius: 30px;
+  transition: all var(--transition-speed);
+}
+
+.contact-email:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.offre-expanded {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offres-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .infos-complementaires {
+    grid-template-columns: 1fr;
+  }
+  
+  .offres-grid {
+    grid-template-columns: 1fr;
+  }
+}

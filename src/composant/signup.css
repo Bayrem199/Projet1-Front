@@ -1,0 +1,319 @@
+/* Start of Selection */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.signup-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 25px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  width: 95%;
+  max-width: 550px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.signup-title {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"], 
+input[type="tel"],
+input[type="password"],
+select {
+  width: 95%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 0.5px solid #aaa;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border: 0.5px solid #007BFF;
+}
+
+.phone-container {
+  display: flex;
+  align-items: center;
+}
+
+.country-code-selector {
+  margin-right: 10px;
+}
+
+.gender-container {
+  margin-bottom: 12px;
+}
+
+.gender-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox-container {
+  margin: 10px 0;
+}
+
+.robot-verification-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.robot-verification-button.verified {
+  background-color: #e8f0fe;
+  border-color: #4285f4;
+}
+
+.robot-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+
+.robot-icon i {
+  font-size: 20px;
+}
+
+.checkmark {
+  position: absolute;
+  right: 15px;
+  color: #4285f4;
+  font-size: 20px;
+}
+
+.captcha-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.captcha-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.captcha-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.captcha-image {
+  position: relative;
+  padding-bottom: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.captcha-image.selected {
+  border-color: #4285f4;
+}
+
+.captcha-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.captcha-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.captcha-buttons button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.captcha-buttons button:first-child {
+  background-color: #4285f4;
+  color: white;
+}
+
+.captcha-buttons button:last-child {
+  background-color: #f2f2f2;
+  color: #666;
+}
+
+.verify-button,
+button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: background 0.3s ease;
+}
+
+.verify-button:hover,
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.language-selector {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.language-selector label {
+  margin-right: 10px;
+  font-size: 0.85em;
+}
+
+.language-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.verification-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.85em;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.facebook-button {
+  background-color: #3b5998;
+}
+
+.google-button {
+  background-color: #db4437;
+}
+
+.social-button i {
+  margin-right: 10px;
+}
+
+.social-button:hover {
+  transform: scale(1.05);
+}
+
+.social-button:active {
+  transform: scale(0.95);
+}
+
+.robot-verification {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+  margin: 15px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.robot-verification:hover {
+  background-color: #e8f0fe;
+}
+
+.robot-verification input {
+  margin-right: 10px;
+}
+
+.robot-verification label {
+  font-size: 14px;
+  color: #555;
+}
+
+.robot-verification .recaptcha-logo {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('C:\Users\bayre\OneDrive\Bureau\projet\para\src\assets/rec.png'); /* Ajout de l'image du logo reCAPTCHA */
+}
+/* End of Selection */

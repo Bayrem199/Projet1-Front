@@ -1,0 +1,543 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #282c34; /* Couleur de fond de la navbar */
+  color: white; /* Couleur du texte */
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Espacement entre les éléments */
+}
+
+.navbar-item {
+  position: relative; /* Pour le survol */
+}
+
+.navbar-link {
+  color: white; /* Couleur des liens */
+  text-decoration: none; /* Supprime le soulignement */
+  padding: 10px; /* Espacement autour du lien */
+  transition: color 0.3s; /* Transition pour le survol */
+}
+
+.navbar-link:hover {
+  color: #61dafb; /* Couleur au survol */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px; /* Espacement entre le champ de recherche et le bouton */
+}
+
+.search-button {
+  background-color: #61dafb; /* Couleur de fond du bouton de recherche */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #5cb3d4; /* Couleur au survol */
+}
+
+.login-button {
+  background-color: #61dafb; /* Couleur de fond du bouton de connexion */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #5cb3d4; /* Couleur au survol */
+}
+
+.login-form {
+  position: absolute;
+  top: 60px; /* Positionne le formulaire sous la navbar */
+  right: 30px; /* Positionne le formulaire à droite */
+  background-color: white; /* Couleur de fond du formulaire */
+  color: black; /* Couleur du texte */
+  padding: 20px; /* Espacement intérieur */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
+  z-index: 1000; /* S'assurer que le formulaire est au-dessus */
+}
+
+.login-input {
+  width: 100%; /* Prend toute la largeur */
+  padding: 10px;
+  margin-bottom: 10px; /* Espacement entre les champs */
+  border: 1px solid #ccc; /* Bordure */
+  border-radius: 5px; /* Coins arrondis */
+}
+
+.login-submit {
+  background-color: #61dafb; /* Couleur de fond du bouton de soumission */
+  color: white; /* Couleur du texte */
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-submit:hover {
+  background-color: #5cb3d4; /* Couleur au survol */
+}
+
+.signup-button {
+  background-color: transparent; /* Fond transparent */
+  color: #61dafb; /* Couleur du texte */
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* Espacement au-dessus du bouton d'inscription */
+}
+
+.signup-button:hover {
+  text-decoration: underline; /* Souligner au survol */
+}
+
+.login-close {
+  background-color: red; /* Couleur de fond du bouton Fermer */
+  color: white; /* Couleur du texte */
+  border: none;
+  padding: 5px 10px; /* Espacement */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-close:hover {
+  background-color: darkred; /* Couleur au survol */
+}
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 50px; /* Ajustez la taille selon vos besoins */
+  margin-right: 15px; /* Espace entre le logo et le reste de la navbar */
+}
+/* Styles pour le panier */
+.cart-button {
+background-color: #61dafb; /* Couleur de fond du bouton du panier */
+border: none;
+padding: 10px 15px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+margin-left: 15px; /* Pour un espacement entre les boutons */
+}
+
+.cart-button:hover {
+background-color: #5cb3d4; /* Couleur au survol */
+}
+
+/* Fenêtre contextuelle du panier */
+.cart-popup {
+position: absolute;
+top: 60px; /* Positionner sous la navbar */
+right: 30px; /* Aligné à droite */
+background-color: white; /* Couleur de fond */
+color: black; /* Couleur du texte */
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+z-index: 1000;
+width: 250px; /* Taille de la popup */
+}
+
+.view-cart-button {
+background-color: #61dafb;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 10px;
+transition: background-color 0.3s;
+text-decoration: none;
+}
+
+.view-cart-button:hover {
+background-color: #5cb3d4;
+}
+
+.cart-close {
+background-color: red;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 10px;
+transition: background-color 0.3s;
+}
+
+.cart-close:hover {
+background-color: darkred;
+}
+
+/* Styles pour le menu déroulant des services */
+.services-dropdown {
+position: absolute;
+top: 100%; /* Positionne juste en dessous du menu */
+left: 0;
+width: 200px; /* Largeur du dropdown */
+background-color: rgba(255, 255, 255, 0.95); /* Couleur de fond */
+border-radius: 8px; /* Coins arrondis */
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+z-index: 1000; /* S'assurer que le dropdown est au-dessus */
+opacity: 0; /* Démarre invisible */
+visibility: hidden; /* Démarre masqué */
+transform: translateY(-20px); /* Décale vers le haut pour l'effet d'apparition */
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s 0.3s; /* Transition fluide */
+}
+
+.services-dropdown.show {
+opacity: 1; /* Devient visible */
+visibility: visible; /* Devient visible */
+transform: translateY(0); /* Remet à sa place */
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition fluide */
+}
+
+.services-dropdown-item {
+display: block;
+padding: 10px 15px; /* Espacement intérieur */
+color: #333; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+border-bottom: 1px solid #eaeaea; /* Ligne de séparation */
+transition: background-color 0.3s ease, padding-left 0.3s ease; /* Transition pour l'arrière-plan et le padding */
+}
+
+.services-dropdown-item:last-child {
+border-bottom: none; /* Pas de ligne de séparation sur le dernier élément */
+}
+
+.services-dropdown-item:hover {
+background-color: #61dafb; /* Couleur au survol */
+color: white; /* Couleur du texte au survol */
+padding-left: 20px; /* Décale légèrement à gauche pour l'effet au survol */
+}
+
+/* Éléments de la navbar */
+.navbar-item {
+position: relative; /* Nécessaire pour le dropdown */
+}
+
+/* Pour le hover */
+.navbar-item:hover .services-dropdown {
+opacity: 1; /* Devient visible au survol */
+visibility: visible; /* Devient visible au survol */
+transform: translateY(0); /* Remet à sa place */
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition fluide */
+}
+/* Styles de la navbar */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 30px;
+background-color: #282c34; /* Couleur de fond de la navbar */
+color: white; /* Couleur du texte */
+}
+
+/* Styles pour le lien Soin Homme */
+.services-dropdown-item {
+position: relative; /* Nécessaire pour le dropdown */
+color: white; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+padding: 10px; /* Espacement autour du lien */
+transition: color 0.3s; /* Transition pour le survol */
+}
+
+.services-dropdown-item:hover {
+color: #61dafb; /* Couleur au survol */
+}
+
+/* Style pour le dropdown */
+.men-care-dropdown {
+position: absolute; /* Positionné par rapport à l'élément parent */
+top: 50%; /* Centré verticalement par rapport à l'élément parent */
+left: 100%; /* Aligné à droite du lien */
+transform: translateY(-50%); /* Centre le dropdown verticalement */
+width: 250px; /* Largeur du dropdown */
+background-color: rgba(255, 255, 255, 0.95); /* Couleur de fond */
+border-radius: 8px; /* Coins arrondis */
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Ombre */
+z-index: 1000; /* S'assurer que le dropdown est au-dessus */
+opacity: 0; /* Démarre invisible */
+visibility: hidden; /* Démarre masqué */
+transform: translateY(-10px); /* Décale légèrement vers le haut pour l'effet d'apparition */
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition fluide */
+}
+
+/* Affiche le dropdown */
+.men-care-dropdown.show {
+opacity: 1; /* Devient visible */
+visibility: visible; /* Devient visible */
+transform: translateY(0); /* Remet à sa place */
+}
+
+/* Éléments de chaque sous-menu */
+.men-care-dropdown-item {
+display: block;
+padding: 10px 15px; /* Espacement intérieur */
+color: #333; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+transition: background-color 0.3s, padding-left 0.3s; /* Transition pour l'arrière-plan et le padding */
+}
+
+.men-care-dropdown-item:hover {
+background-color: #61dafb; /* Couleur au survol */
+color: white; /* Couleur du texte au survol */
+padding-left: 25px; /* Décale légèrement à gauche pour l'effet au survol */
+}
+
+/* Coins arrondis pour les éléments de menu */
+.men-care-dropdown-item:first-child {
+border-top-left-radius: 8px; /* Coins arrondis en haut */
+border-top-right-radius: 8px; /* Coins arrondis en haut */
+}
+
+.men-care-dropdown-item:last-child {
+border-bottom-left-radius: 8px; /* Coins arrondis en bas */
+border-bottom-right-radius: 8px; /* Coins arrondis en bas */
+}
+/* Styles de la navbar */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 30px;
+background-color: #282c34; /* Couleur de fond de la navbar */
+color: white; /* Couleur du texte */
+}
+
+/* Styles pour le lien Bébé & Maternité */
+.services-dropdown-item {
+position: relative; /* Nécessaire pour le dropdown */
+color: white; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+padding: 10px; /* Espacement autour du lien */
+transition: color 0.3s; /* Transition pour le survol */
+}
+
+.services-dropdown-item:hover {
+color: #61dafb; /* Couleur au survol */
+}
+
+/* Style pour le dropdown */
+.baby-care-dropdown {
+position: absolute; /* Positionné par rapport à l'élément parent */
+top: 50%; /* Centré verticalement par rapport à l'élément parent */
+left: 100%; /* Aligné à droite du lien */
+transform: translateY(-50%); /* Centre le dropdown verticalement */
+width: 250px; /* Largeur du dropdown */
+background-color: rgba(255, 255, 255, 0.95); /* Couleur de fond */
+border-radius: 8px; /* Coins arrondis */
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Ombre */
+z-index: 1000; /* S'assurer que le dropdown est au-dessus */
+opacity: 0; /* Démarre invisible */
+visibility: hidden; /* Démarre masqué */
+transform: translateY(-10px); /* Décale légèrement vers le haut pour l'effet d'apparition */
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition fluide */
+}
+
+/* Affiche le dropdown */
+.baby-care-dropdown.show {
+opacity: 1; /* Devient visible */
+visibility: visible; /* Devient visible */
+transform: translateY(0); /* Remet à sa place */
+}
+
+/* Éléments de chaque sous-menu */
+.baby-care-dropdown-item {
+display: block;
+padding: 10px 15px; /* Espacement intérieur */
+color: #333; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+transition: background-color 0.3s, padding-left 0.3s; /* Transition pour l'arrière-plan et le padding */
+}
+
+.baby-care-dropdown-item:hover {
+background-color: #61dafb; /* Couleur au survol */
+color: white; /* Couleur du texte au survol */
+padding-left: 25px; /* Décale légèrement à gauche pour l'effet au survol */
+}
+
+/* Coins arrondis pour les éléments de menu */
+.baby-care-dropdown-item:first-child {
+border-top-left-radius: 8px; /* Coins arrondis en haut */
+border-top-right-radius: 8px; /* Coins arrondis en haut */
+}
+
+.baby-care-dropdown-item:last-child {
+border-bottom-left-radius: 8px; /* Coins arrondis en bas */
+border-bottom-right-radius: 8px; /* Coins arrondis en bas */
+}
+/* Styles de la navbar */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 30px;
+background-color: #282c34; /* Couleur de fond de la navbar */
+color: white; /* Couleur du texte */
+}
+
+/* Styles pour le lien Soin Femme */
+.services-dropdown-item {
+position: relative; /* Nécessaire pour le dropdown */
+color: white; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+padding: 10px; /* Espacement autour du lien */
+transition: color 0.3s; /* Transition pour le survol */
+}
+
+.services-dropdown-item:hover {
+color: #61dafb; /* Couleur au survol */
+}
+
+/* Style pour le dropdown */
+.women-care-dropdown {
+position: absolute; /* Positionné par rapport à l'élément parent */
+top: 50%; /* Centré verticalement par rapport à l'élément parent */
+left: 100%; /* Aligné à droite du lien */
+transform: translateY(-50%); /* Centre le dropdown verticalement */
+width: 250px; /* Largeur du dropdown */
+background-color: rgba(255, 255, 255, 0.95); /* Couleur de fond */
+border-radius: 8px; /* Coins arrondis */
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Ombre */
+z-index: 1000; /* S'assurer que le dropdown est au-dessus */
+opacity: 0; /* Démarre invisible */
+visibility: hidden; /* Démarre masqué */
+transform: translateY(-10px); /* Décale légèrement vers le haut pour l'effet d'apparition */
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition fluide */
+}
+
+/* Affiche le dropdown */
+.women-care-dropdown.show {
+opacity: 1; /* Devient visible */
+visibility: visible; /* Devient visible */
+transform: translateY(0); /* Remet à sa place */
+}
+
+/* Éléments de chaque sous-menu */
+.women-care-dropdown-item {
+display: block;
+padding: 10px 15px; /* Espacement intérieur */
+color: #333; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+transition: background-color 0.3s, padding-left 0.3s; /* Transition pour l'arrière-plan et le padding */
+}
+
+.women-care-dropdown-item:hover {
+background-color: #61dafb; /* Couleur au survol */
+color: white; /* Couleur du texte au survol */
+padding-left: 25px; /* Décale légèrement à gauche pour l'effet au survol */
+}
+
+/* Coins arrondis pour les éléments de menu */
+.women-care-dropdown-item:first-child {
+border-top-left-radius: 8px; /* Coins arrondis en haut */
+border-top-right-radius: 8px; /* Coins arrondis en haut */
+}
+
+.women-care-dropdown-item:last-child {
+border-bottom-left-radius: 8px; /* Coins arrondis en bas */
+border-bottom-right-radius: 8px; /* Coins arrondis en bas */
+}
+/* Styles de la navbar */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 30px;
+background-color: #282c34; /* Couleur de fond de la navbar */
+color: white; /* Couleur du texte */
+}
+
+/* Styles pour le lien Matériel Médical */
+.services-dropdown-item {
+position: relative; /* Nécessaire pour le dropdown */
+color: rgb(0, 0, 0); /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+padding: 10px; /* Espacement autour du lien */
+transition: color 0.3s; /* Transition pour le survol */
+}
+
+.services-dropdown-item:hover {
+color: #ffffff; /* Couleur au survol */
+}
+
+/* Style pour le dropdown */
+.medical-dropdown {
+position: absolute; /* Positionné par rapport à l'élément parent */
+top: 50%; /* Centré verticalement par rapport à l'élément parent */
+left: 100%; /* Aligné à droite du lien */
+transform: translateY(-50%); /* Centre le dropdown verticalement */
+width: 250px; /* Largeur du dropdown */
+background-color: rgba(255, 255, 255, 0.95); /* Couleur de fond */
+border-radius: 8px; /* Coins arrondis */
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Ombre */
+z-index: 1000; /* S'assurer que le dropdown est au-dessus */
+opacity: 0; /* Démarre invisible */
+visibility: hidden; /* Démarre masqué */
+transform: translateY(-10px); /* Décale légèrement vers le haut pour l'effet d'apparition */
+transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transition fluide */
+}
+
+/* Affiche le dropdown */
+.medical-dropdown.show {
+opacity: 1; /* Devient visible */
+visibility: visible; /* Devient visible */
+transform: translateY(0); /* Remet à sa place */
+}
+
+/* Éléments de chaque sous-menu */
+.medical-dropdown-item {
+display: block;
+padding: 10px 15px; /* Espacement intérieur */
+color: #333; /* Couleur du texte */
+text-decoration: none; /* Supprime le soulignement */
+transition: background-color 0.3s, padding-left 0.3s; /* Transition pour l'arrière-plan et le padding */
+}
+
+.medical-dropdown-item:hover {
+background-color: #61dafb; /* Couleur au survol */
+color: white; /* Couleur du texte au survol */
+padding-left: 25px; /* Décale légèrement à gauche pour l'effet au survol */
+}
+
+/* Coins arrondis pour les éléments de menu */
+.medical-dropdown-item:first-child {
+border-top-left-radius: 8px; /* Coins arrondis en haut */
+border-top-right-radius: 8px; /* Coins arrondis en haut */
+}
+
+.medical-dropdown-item:last-child {
+border-bottom-left-radius: 8px; /* Coins arrondis en bas */
+border-bottom-right-radius: 8px; /* Coins arrondis en bas */
+}
